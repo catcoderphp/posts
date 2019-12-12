@@ -17,14 +17,14 @@ import java.util.Map;
 public class PostController {
     @GetMapping("/all/{id}")
     public ResponseEntity<ResponseHandler> get(
-            @PathVariable(value = "id",required = true) int id
+            @PathVariable(value = "id", required = true) int id
     ) {
         ResponseEntity<ResponseHandler> response;
         ResponseHandler responseHandler = new ResponseHandler();
         if (id != 0) {
-            Map<String ,Object> data = new HashMap<String,Object>();
-            data.put("test","hello");
-            data.put("test2",new ArrayList<>());
+            Map<String, Object> data = new HashMap<String, Object>();
+            data.put("test", "hello");
+            data.put("test2", new ArrayList<>());
             responseHandler.setError(false);
             responseHandler.setMessage("OK");
             responseHandler.setStatusCode(200);
@@ -32,7 +32,7 @@ public class PostController {
             response = new ResponseEntity<ResponseHandler>(responseHandler, HttpStatus.valueOf(responseHandler.getStatusCode()));
         } else {
             responseHandler.notFound();
-            response = new ResponseEntity<ResponseHandler>(responseHandler,HttpStatus.valueOf(responseHandler.getStatusCode()));
+            response = new ResponseEntity<ResponseHandler>(responseHandler, HttpStatus.valueOf(responseHandler.getStatusCode()));
         }
         return response;
     }

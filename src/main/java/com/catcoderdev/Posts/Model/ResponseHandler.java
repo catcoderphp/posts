@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ResponseHandler{
+public class ResponseHandler {
 
     private boolean error;
     private Object data;
