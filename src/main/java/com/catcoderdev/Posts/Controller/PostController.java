@@ -32,14 +32,14 @@ public class PostController {
             responseHandler.setError(false);
             responseHandler.setStatusCode(HttpStatus.CREATED.value());
             responseHandler.buildMetaData(1, 1, 1);
-            return response = new ResponseEntity<>(responseHandler, HttpStatus.CREATED);
+            return new ResponseEntity<>(responseHandler, HttpStatus.CREATED);
         } catch (Exception e) {
             responseHandler.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
             responseHandler.setError(true);
             responseHandler.setData(e);
             responseHandler.setMessage(HttpStatus.INTERNAL_SERVER_ERROR.toString());
             responseHandler.buildMetaData(0, 0, 0);
-            return response = new ResponseEntity<>(
+            return new ResponseEntity<>(
                     responseHandler,
                     HttpStatus.valueOf(responseHandler.getStatusCode())
             );
